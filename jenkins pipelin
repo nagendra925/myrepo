@@ -2,22 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Dev') {
+        stage('build') {
             steps {
-                echo 'Hello-Dev-Stage'
-                build quietPeriod: 5, job: 'Tomcat-Docker'
+                echo 'Build the application'
+                
             }
         }
         stage('Test') {
             steps {
-                echo 'Hello Test-stage'
-                build quietPeriod: 5, job: 'Tomcat-Linux'
+                echo 'Test the application'
+                
             }
         }
-        stage('Prod') {
+        stage('deploy') {
             steps {
-                echo 'Hello Prod-stage'
-                build quietPeriod: 5, job: 'Tomcat-Aws'
+                echo 'Deploy the application'
+                
             }
         }
     }
